@@ -91,89 +91,139 @@ public class Main {
         }
         List<Integer> num = Arrays.asList(2,3,4,5,6,7,8,9);
         List<Integer> square = num.stream().map(x->(x+1)*(x+1)).collect(Collectors.toList());
+        System.out.println("Squaring");
+
+        System.out.println(square);
+
+        System.out.println("The total sum of values present in list ");
+
+        Integer sum = num.stream().reduce(0,Integer::sum);
+        System.out.println(sum);
+
+
         //System.out.println(square);
 
 
         List<String> names = Arrays.asList("apple","banana","hi","Hello","and","heydude");
-        String res = names.stream().filter(x->x.startsWith("h")||x.startsWith("H")).collect(Collectors.joining());
-        System.out.println("%#$@!!@#$%^");
+        List<String> res = names.stream().filter(x->x.startsWith("h")||x.startsWith("H")).collect(Collectors.toList());
+        String rap = names.stream().filter(x->x.startsWith("h")||x.startsWith("H")).collect(Collectors.joining());
+
+
+        System.out.println("\n******************");
+
+
+        System.out.println("finding by starting letter ");
+
         System.out.println(res);
-        System.out.println("%#$@!!@#$%^");
+        System.out.println("\n******************");
+
+        System.out.println("joining string");
+        System.out.println(rap);
 
         //
         List<Integer> squ = num.stream().map(y->y*y).collect(Collectors.toList());
 //        System.out.println(squ);
-//1.print numbers
+        System.out.println("\n******************");
+
+        System.out.println("\n1.print numbers");
         IntStream.range(1,10).forEach(System.out::println);
 
 
+        System.out.println("\n******************");
 
 //2. Skip first n no of elements from the string
+        System.out.println("\n2. Skip first n no of elements from the string");
 
         IntStream.range(1,10).skip(5).forEach(System.out::println);
+        System.out.println("\n******************");
 
 // 3.lambda expression
+        System.out.println("\n3.lambda expression");
+
         IntStream.range(1,10).skip(2).forEach(x->System.out.println(x));
 
+        System.out.println("\n******************");
 
 // 4. sum
+        System.out.println("\n4.Sum");
 
         System.out.println(
                 IntStream.range(1,5).sum()
         );
         System.out.println(" ");
+        System.out.println("\n******************");
 
 //  5.  sorted and 1st item n the list
+        System.out.println("\n5.  sorted and 1st item n the list");
 
         Stream.of("Apple","Ant","Avocado","Avengers").sorted().findFirst().ifPresent(System.out::println);
+        System.out.println("\n******************");
 
 //6. Stream from Array, Sort, Filter and print
+        System.out.println("\n6. Stream from Array, Sort, Filter and print");
 
         String[]  info = {"Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude" };
         Stream.of(info).filter(y->y.startsWith("h")||y.startsWith("H ")).sorted().forEach(System.out::println);
 
+        System.out.println("\n******************");
 
 //7. Average of squares of int array
+        System.out.println("\n7. Average of squares of int array");
+
         Arrays.stream(new int[]{2,3,4,5,6}).map(m->m*m).average().ifPresent(System.out::println);
 
+        System.out.println("\n******************");
 
 // 8. Stream from List, filter and print
+        System.out.println("\n8. Stream from List, filter and print");
 
         List<String> data = Arrays.asList("   Apple","   Ant","   Avocado","   Avengers","banana","hi","Hello","and","heydude");
 //        Streams();
 //        System.out.println(strem);
-        System.out.println("_____++_----");
+        System.out.println("\n******************");
+
+        System.out.println("\nUpperCase");
 
         data.stream().map(q->q.toUpperCase()).forEach(System.out::println);
+        System.out.println("\n******************");
+
+        System.out.println("\nTrim");
+
         data.stream().forEach(e->System.out.println(e.trim()));
+        System.out.println("\n******************");
+
+        System.out.println("\nStrip");
+
         data.stream().forEach(w->System.out.println(w.strip()));
-        System.out.println("_____++_----");
+        System.out.println("\n******************");
+
+        System.out.println("\nLowercase,starts with an character, sort and print ");
 
         data.stream().map(String::toLowerCase).filter(y->y.startsWith("h")).sorted().forEach(System.out::println);
-        System.out.println("_____++_----");
-        System.out.println("_____++_----");
+
+        System.out.println("\n******************");
+        System.out.println("\ncontains 'a string'");
+
 
         data.stream().filter(m->m.contains("ocad")).forEach(System.out::println);
 
-        System.out.println("_____++_----");
-        System.out.println("_____++_----");
+        System.out.println("\n******************");
 
 
 //        9. Reduction Sum
-
+        System.out.println("9. Reduction Sum");
         double t = Stream.of(7.3,2.4,1.9).reduce(0.0, (Double a, Double b )->a+b);
         System.out.println(t);
 
 
+        System.out.println("\n******************");
 
 //        10. Summary Statistics
+        System.out.println("10. Summary Statistics");
 
 
         IntSummaryStatistics stat = IntStream.of(2,1,5,10,31,94,90).summaryStatistics();
         System.out.println(stat.getAverage());
-
-
-
 
     }
 
