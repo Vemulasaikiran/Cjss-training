@@ -95,9 +95,12 @@ public class Main {
 
 
         List<String> names = Arrays.asList("apple","banana","hi","Hello","and","heydude");
-        List<String> res = names.stream().filter(x->x.startsWith("h")||x.startsWith("H")).collect(Collectors.toList());
-//        System.out.println(res);
-//
+        String res = names.stream().filter(x->x.startsWith("h")||x.startsWith("H")).collect(Collectors.joining());
+        System.out.println("%#$@!!@#$%^");
+        System.out.println(res);
+        System.out.println("%#$@!!@#$%^");
+
+        //
         List<Integer> squ = num.stream().map(y->y*y).collect(Collectors.toList());
 //        System.out.println(squ);
 //1.print numbers
@@ -136,10 +139,24 @@ public class Main {
 
 // 8. Stream from List, filter and print
 
-        List<String> data = Arrays.asList("Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude");
+        List<String> data = Arrays.asList("   Apple","   Ant","   Avocado","   Avengers","banana","hi","Hello","and","heydude");
 //        Streams();
 //        System.out.println(strem);
+        System.out.println("_____++_----");
+
+        data.stream().map(q->q.toUpperCase()).forEach(System.out::println);
+        data.stream().forEach(e->System.out.println(e.trim()));
+        data.stream().forEach(w->System.out.println(w.strip()));
+        System.out.println("_____++_----");
+
         data.stream().map(String::toLowerCase).filter(y->y.startsWith("h")).sorted().forEach(System.out::println);
+        System.out.println("_____++_----");
+        System.out.println("_____++_----");
+
+        data.stream().filter(m->m.contains("ocad")).forEach(System.out::println);
+
+        System.out.println("_____++_----");
+        System.out.println("_____++_----");
 
 
 //        9. Reduction Sum
@@ -154,6 +171,9 @@ public class Main {
 
         IntSummaryStatistics stat = IntStream.of(2,1,5,10,31,94,90).summaryStatistics();
         System.out.println(stat.getAverage());
+
+
+
 
     }
 
