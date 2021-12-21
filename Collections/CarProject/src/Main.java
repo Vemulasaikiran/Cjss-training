@@ -101,52 +101,57 @@ public class Main {
         List<Integer> squ = num.stream().map(y->y*y).collect(Collectors.toList());
 //        System.out.println(squ);
 //1.print numbers
-      //  IntStream.range(1,10).forEach(System.out::println);
+        IntStream.range(1,10).forEach(System.out::println);
 
 
 
 //2. Skip first n no of elements from the string
 
-//        IntStream.range(1,10).skip(5).forEach(System.out::println);
+        IntStream.range(1,10).skip(5).forEach(System.out::println);
 
 // 3.lambda expression
-        //IntStream.range(1,10).skip(2).forEach(x->System.out.println(x));
+        IntStream.range(1,10).skip(2).forEach(x->System.out.println(x));
 
 
 // 4. sum
 
-//        System.out.println(
-//                IntStream.range(1,5).sum()
-//        );
-//        System.out.println(" ");
+        System.out.println(
+                IntStream.range(1,5).sum()
+        );
+        System.out.println(" ");
 
 //  5.  sorted and 1st item n the list
 
-//        Stream.of("Apple","Ant","Avocado","Avengers").sorted().findFirst().ifPresent(System.out::println);
+        Stream.of("Apple","Ant","Avocado","Avengers").sorted().findFirst().ifPresent(System.out::println);
 
 //6. Stream from Array, Sort, Filter and print
 
-//        String[]  info = {"Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude" };
-//        Stream.of(info).filter(y->y.startsWith("h")||y.startsWith("H ")).sorted().forEach(System.out::println);
+        String[]  info = {"Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude" };
+        Stream.of(info).filter(y->y.startsWith("h")||y.startsWith("H ")).sorted().forEach(System.out::println);
 
 
 //7. Average of squares of int array
-//        Arrays.stream(new int[]{2,3,4,5,6}).map(m->m*m).average().ifPresent(System.out::println);
+        Arrays.stream(new int[]{2,3,4,5,6}).map(m->m*m).average().ifPresent(System.out::println);
 
 
 // 8. Stream from List, filter and print
 
-//        List<String> data = Arrays.asList("Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude");
+        List<String> data = Arrays.asList("Apple","Ant","Avocado","Avengers","banana","hi","Hello","and","heydude");
 //        Streams();
 //        System.out.println(strem);
-//        data.stream().map(String::toLowerCase).filter(y->y.startsWith("h")).sorted().forEach(System.out::println);
+        data.stream().map(String::toLowerCase).filter(y->y.startsWith("h")).sorted().forEach(System.out::println);
 
 
 //        9. Reduction Sum
 
         double t = Stream.of(7.3,2.4,1.9).reduce(0.0, (Double a, Double b )->a+b);
         System.out.println(t);
+
+
+
 //        10. Summary Statistics
+
+
         IntSummaryStatistics stat = IntStream.of(2,1,5,10,31,94,90).summaryStatistics();
         System.out.println(stat.getAverage());
 

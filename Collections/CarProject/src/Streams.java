@@ -7,11 +7,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Streams {
-
-
-
-    public class JavaStreams {
-        public void main(String[] args) throws IOException {
+        public static void main (String[]args) throws IOException {
             // 1. Integer Stream
             IntStream
                     .range(1, 10)
@@ -117,6 +113,6 @@ public class Streams {
             System.out.println(summary);
         }
 
-    }
-
 }
+
+
