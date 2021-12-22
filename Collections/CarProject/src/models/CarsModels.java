@@ -6,6 +6,11 @@ public class CarsModels {
     private String model;
     private List<CarCP> colorAndPrice;
 
+    public CarsModels(String model, List<CarCP> colorAndPrice) {
+        this.model = model;
+        this.colorAndPrice = colorAndPrice;
+    }
+
     public String getModel() {
         return model;
     }
@@ -21,6 +26,4 @@ public class CarsModels {
     public void setColorAndPrice(List<CarCP> colorAndPrice) {
         this.colorAndPrice = colorAndPrice;
     }
-
-
 }

@@ -8,7 +8,12 @@ public class DealerDetails {
    private int phoneNumber;
    private List<CarsModels> cars;
 
-
+    public DealerDetails(String name, String address, int phoneNumber, List<CarsModels> cars) {
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.cars = cars;
+    }
 
     public String getName() {
         return name;

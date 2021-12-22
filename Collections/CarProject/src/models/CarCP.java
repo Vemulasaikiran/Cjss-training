@@ -5,6 +5,11 @@ public class CarCP {
    private int price;
    private int quantity;
 
+    public CarCP(String color, int price, int quantity) {
+        this.color = color;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
     public String getColor() {
         return color;
@@ -33,8 +38,9 @@ public class CarCP {
     @Override
     public String toString() {
         return
-                "\ncolor='" + color + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity+'\'';
+                "\n \n color='" + color + '\'' +
+                "; \n price=" + price +
+                "; \n quantity=" + quantity
+                +"\n";
     }
 }
