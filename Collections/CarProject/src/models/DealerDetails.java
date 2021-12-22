@@ -6,18 +6,9 @@ public class DealerDetails {
    private String name;
    private String address;
    private int phoneNumber;
-   private List<Cars> cars;
+   private List<CarsModels> cars;
 
-    public DealerDetails(String name, String address, int phoneNumber, List<Cars> cars) {
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.cars = cars;
-    }
 
-    public DealerDetails() {
-
-    }
 
     public String getName() {
         return name;
@@ -43,11 +34,11 @@ public class DealerDetails {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Cars> getCars() {
+    public List<CarsModels> getCars() {
         return cars;
     }
 
-    public void setCars(List<Cars> cars) {
+    public void setCars(List<CarsModels> cars) {
         this.cars = cars;
     }
 }

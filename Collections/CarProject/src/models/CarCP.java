@@ -30,7 +30,11 @@ public class CarCP {
         this.quantity = quantity;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return
+                "\ncolor='" + color + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity+'\'';
+    }
 }
