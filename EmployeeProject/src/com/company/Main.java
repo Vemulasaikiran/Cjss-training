@@ -104,18 +104,23 @@ public class Main {
 
         System.out.println("+++********* !! Task 4 !! ***+++**++***++**++*");
 
-        
+        employees.stream().forEach(g->{
+            System.out.println("\n Employee ID : "+g.getId()+"\n Name : "+g.getName()+"\n Salary : "+g.getSalary());
+            locations.stream().filter(x->x.getLocationId().equals(g.getLocationId())).forEach(m->System.out.println(" city : "+m.getLocationName()+"\n Country : "+m.getCountry()));
+        });
 
 
+        System.out.println("+++********* !! Task 5 !! ***+++**++***++**++*");
 
 
+        List<Location> locCH = locations.stream().filter(j->j.getCountry().contains("India")&&j.getLocationName().contains("chennai")).collect(Collectors.toList());
 
-
-
-
-
-
-
-
+        List<Employee> employeeche = employees.stream().filter(t->locCH.stream().anyMatch(o->o.getLocationId().equals(t.getLocationId()))).collect(Collectors.toList());
+//        System.out.println(locCH);
+//        System.out.println(employeeche);
+        employeeche.stream().forEach(s->{
+            System.out.println("\n Name : "+s.getName()+"\n Employee Id : "+s.getId());
+            locCH.stream().filter(w->w.getLocationId().equals(s.getLocationId())).forEach(v->System.out.println(" City : "+v.getLocationName()+"\n Country : "+v.getCountry()));
+        });
     }
 }
